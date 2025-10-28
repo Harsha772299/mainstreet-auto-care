@@ -6,8 +6,9 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+import { useEffect, useState } from "react";
 
 const reviews = [
   {
@@ -37,6 +38,23 @@ const reviews = [
 ];
 
 export const ReviewsCarousel = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      if (!isHovered && api.canScrollNext()) {
+        api.scrollNext();
+      } else if (!isHovered) {
+        api.scrollTo(0);
+      }
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [api, isHovered]);
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -50,16 +68,14 @@ export const ReviewsCarousel = () => {
         </div>
 
         <Carousel
+          setApi={setApi}
           opts={{
             align: "start",
             loop: true,
           }}
-          plugins={[
-            Autoplay({
-              delay: 6000,
-            }),
-          ]}
           className="w-full max-w-5xl mx-auto"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           <CarouselContent>
             {reviews.map((review, index) => (
