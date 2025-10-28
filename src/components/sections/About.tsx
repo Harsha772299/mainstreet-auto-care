@@ -12,7 +12,7 @@ export const About = ({ onBookClick }: AboutProps) => {
     "Honest, transparent pricing",
     "State-of-the-art diagnostic equipment",
     "Quality parts and craftsmanship",
-    "Family-owned and operated",
+    "Trusted locally for integrity, skill, and honest service — since day one.",
   ];
 
   return (

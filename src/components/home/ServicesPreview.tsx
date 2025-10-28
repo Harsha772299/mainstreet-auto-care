@@ -75,28 +75,38 @@ export const ServicesPreview = ({ onBookClick }: ServicesPreviewProps) => {
     <section id="services" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
+          <p className="text-primary font-semibold mb-2 text-sm uppercase tracking-wider">
+            From inspections to diagnostics — we keep Vancouver's cars running right.
+          </p>
           <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
-            Comprehensive Auto Services
+            Our Services
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            From routine maintenance to complex repairs, we've got you covered.
+            Professional automotive care for all your vehicle needs
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Card key={index} className="hover-lift">
-                <CardHeader>
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                    <Icon className="h-5 w-5 text-primary" />
+              <Card 
+                key={index} 
+                className="transition-all duration-300 hover:shadow-lg hover:border-t-4 hover:border-t-primary group"
+              >
+                <CardHeader className="pb-3">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                    <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-lg">{service.title}</CardTitle>
+                  <CardTitle className="font-heading text-lg">{service.title}</CardTitle>
+                  <CardDescription className="text-sm">{service.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="mb-4">{service.description}</CardDescription>
-                  <Button size="sm" variant="outline" onClick={onBookClick} className="w-full">
+                <CardContent className="pt-0">
+                  <Button
+                    onClick={onBookClick}
+                    variant="outline"
+                    className="w-full rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all"
+                  >
                     Book Service
                   </Button>
                 </CardContent>

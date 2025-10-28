@@ -21,30 +21,33 @@ const pillars = [
 
 export const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20" style={{ backgroundColor: '#F7F7F7' }}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
-            Where Trust Meets Technology
+        <div className="text-center mb-16">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl mb-4 tracking-tight">
+            Experience You Can Trust. Service You Can Feel.
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-balance">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-balance text-lg">
             We've built our reputation on honesty, skill, and the kind of service we'd want for our own families.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {pillars.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
-              <Card key={index} className="hover-lift border-2">
+              <Card 
+                key={index} 
+                className="border-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl rounded-xl"
+              >
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-primary" />
+                  <div className="w-16 h-16 rounded-xl bg-primary/10 border-2 border-primary/20 flex items-center justify-center mb-4">
+                    <Icon className="h-8 w-8 text-primary" />
                   </div>
                   <CardTitle className="font-heading text-xl">{pillar.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base">{pillar.description}</CardDescription>
+                  <CardDescription className="text-base leading-relaxed">{pillar.description}</CardDescription>
                 </CardContent>
               </Card>
             );
