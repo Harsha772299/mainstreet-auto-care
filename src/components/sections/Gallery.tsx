@@ -1,13 +1,11 @@
 import exteriorImage from "@/assets/gallery-exterior.jpg";
 import bayImage from "@/assets/gallery-bay.png";
 import teamImage from "@/assets/gallery-team.png";
-import carImage from "@/assets/gallery-car.jpg";
 
 const images = [
-  { src: exteriorImage, alt: "Main Street Automotive - Vancouver", caption: "Main Street Automotive — Vancouver" },
-  { src: bayImage, alt: "Clean, organized repair bays", caption: "Clean, organized bays" },
-  { src: teamImage, alt: "Skilled technicians at work", caption: "Skilled technicians at work" },
-  { src: carImage, alt: "Pride in every repair", caption: "Pride in every repair" },
+  { src: exteriorImage, alt: "Main Street Automotive - Vancouver" },
+  { src: bayImage, alt: "Clean, organized repair bays" },
+  { src: teamImage, alt: "Skilled technicians at work" },
 ];
 
 export const Gallery = () => {
@@ -23,15 +21,13 @@ export const Gallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {images.map((image, index) => (
             <div
               key={index}
-              className={`relative overflow-hidden rounded-lg group cursor-pointer ${
-                index === 0 ? 'md:row-span-2' : ''
-              }`}
+              className="relative overflow-hidden rounded-md group cursor-pointer"
             >
-              <div className="relative h-64 md:h-full min-h-[300px]">
+              <div className="relative h-64 md:h-80">
                 <img
                   src={image.src}
                   alt={image.alt}

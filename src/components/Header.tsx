@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/logo.png";
 import { BookingModal } from "./BookingModal";
 
 export const Header = () => {
@@ -27,6 +26,20 @@ export const Header = () => {
 
   return (
     <>
+      {/* Banner with Business Name */}
+      <div className="w-full bg-[#9B2832] py-3 px-4">
+        <div className="container mx-auto">
+          <h1 className="text-center font-heading font-bold text-2xl md:text-3xl lg:text-4xl tracking-wide"
+              style={{
+                color: '#F4C542',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.3), -1px -1px 2px rgba(255,255,255,0.1)',
+                letterSpacing: '0.05em'
+              }}>
+            Main Street Automotive
+          </h1>
+        </div>
+      </div>
+
       {/* Sticky Navigation */}
       <header className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled 
@@ -34,11 +47,7 @@ export const Header = () => {
           : 'bg-background border-b'
       }`}>
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo - Left */}
-            <div className="flex items-center">
-              <img src={logo} alt="Main Street Automotive" className="h-14 md:h-16" />
-            </div>
+          <div className="flex items-center justify-center lg:justify-between h-16">
 
             {/* Navigation Links - Center (Hidden on mobile) */}
             <nav className="hidden lg:flex items-center gap-8">

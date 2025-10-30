@@ -50,13 +50,17 @@ export const Hero = ({ onBookClick }: HeroProps) => {
       </div>
 
       {/* Optional Bottom-Right Overlay */}
-      <div className="hidden md:flex absolute bottom-8 right-8 bg-black/40 backdrop-blur-sm px-6 py-3 rounded-lg text-white text-sm gap-6">
+      <div className="hidden md:flex absolute bottom-8 right-8 bg-black/40 backdrop-blur-sm px-6 py-4 rounded-lg text-white text-xs gap-4 flex-col">
         <span className="flex items-center gap-2">
-          📍 Vancouver BC
+          📍 4835 Main St, Vancouver, BC
         </span>
-        <span className="flex items-center gap-2">
-          ⏰ Mon–Fri 8:30–5:00
-        </span>
+        <div className="flex flex-col gap-1">
+          <span className="flex items-center gap-2">
+            ⏰ Mon–Fri: 8:30 AM – 5:00 PM
+          </span>
+          <span className="pl-5">Sat: 8:00 AM – 2:00 PM</span>
+          <span className="pl-5">Sun: Closed</span>
+        </div>
       </div>
     </section>
   );
