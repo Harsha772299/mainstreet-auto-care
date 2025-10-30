@@ -75,7 +75,7 @@ export const ServicesPreview = ({ onBookClick }: ServicesPreviewProps) => {
     <section id="services" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <p className="text-primary font-semibold mb-2 text-sm uppercase tracking-wider">
+          <p className="text-primary font-medium mb-2 tracking-wide text-lg">
             From inspections to diagnostics — we keep Vancouver's cars running right.
           </p>
           <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">

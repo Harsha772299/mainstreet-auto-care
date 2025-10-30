@@ -1,11 +1,15 @@
 import exteriorImage from "@/assets/gallery-exterior.jpg";
 import bayImage from "@/assets/gallery-bay.png";
 import teamImage from "@/assets/gallery-team.png";
+import jeepImage from "@/assets/gallery-jeep.jpg";
+import shopFrontImage from "@/assets/gallery-shop-front.jpg";
 
 const images = [
   { src: exteriorImage, alt: "Main Street Automotive - Vancouver" },
   { src: bayImage, alt: "Clean, organized repair bays" },
   { src: teamImage, alt: "Skilled technicians at work" },
+  { src: jeepImage, alt: "Yellow Jeep service" },
+  { src: shopFrontImage, alt: "Main Street Automotive storefront" },
 ];
 
 export const Gallery = () => {
@@ -21,7 +25,7 @@ export const Gallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {images.map((image, index) => (
             <div
               key={index}

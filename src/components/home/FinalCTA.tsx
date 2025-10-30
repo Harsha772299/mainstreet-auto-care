@@ -10,7 +10,7 @@ export const FinalCTA = ({ onBookClick }: FinalCTAProps) => {
     <section 
       className="py-20 text-white relative overflow-hidden"
       style={{
-        background: 'linear-gradient(90deg, #B0191E 0%, #7E0E16 100%)'
+        background: '#D10000'
       }}
     >
       <div className="container mx-auto px-4 text-center relative z-10">
